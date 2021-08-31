@@ -57,11 +57,11 @@ const resolvers = {
                      {_id: context.user._id},
                      {$addToSet: {savedBooks: args}},
                      {new: true, runValidators: true}
-                 ),
+                 );
                 return bookSaved;
             } catch (err) {
                 return err;
-            }
+            };
         }
          throw new AuthenticationError('You need to be logged in!');
     },
